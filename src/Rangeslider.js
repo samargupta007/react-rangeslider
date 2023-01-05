@@ -290,14 +290,14 @@ class Slider extends Component {
       handleLabel
     } = this.props
     const { active } = this.state
-    const dimension = constants.orientation[orientation].dimension
+    // const dimension = constants.orientation[orientation].dimension
     const direction = reverse
       ? constants.orientation[orientation].reverseDirection
       : constants.orientation[orientation].direction
-    const position = this.getPositionFromValue(value)
-    const coords = this.coordinates(position)
-    const fillStyle = { [dimension]: `${coords.fill}px` }
-    const handleStyle = { [direction]: `${coords.handle}px` }
+    // const position = this.getPositionFromValue(value)
+    // const coords = this.coordinates(position)
+    // const fillStyle = { [dimension]: `${coords.fill}px` }
+    // const handleStyle = { [direction]: `${coords.handle}px` }
     let showTooltip = tooltip && active
 
     let labelItems = []
@@ -326,7 +326,7 @@ class Slider extends Component {
         )
       }
     }
-    const fillStyle1 = { width: `Calc(${value}%)` };
+    const fillStyle1 = { width: `Calc(${value}%)` }
     const rangeSliderFill = value !== 100 ? 'rangeslider__fill' : 'range_slider__fill'
     return (
       <div
@@ -367,7 +367,7 @@ class Slider extends Component {
                 this.tooltip = st
               }}
               className='rangeslider__handle-tooltip'
-              >
+            >
               <span>{this.handleFormat(value)}</span>
             </div>
             : null}
