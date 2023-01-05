@@ -326,7 +326,8 @@ class Slider extends Component {
         )
       }
     }
-
+    const fillStyle1 = { width: `Calc(${value}%)` };
+    const rangeSliderFill = value !== 100 ? 'rangeslider__fill' : 'range_slider__fill'
     return (
       <div
         ref={s => {
@@ -347,7 +348,7 @@ class Slider extends Component {
         aria-valuenow={value}
         aria-orientation={orientation}
       >
-        <div className='rangeslider__fill' style={fillStyle} />
+        <div className={rangeSliderFill} style={fillStyle1} />
         <div
           ref={sh => {
             this.handle = sh
@@ -357,7 +358,7 @@ class Slider extends Component {
           onTouchMove={this.handleDrag}
           onTouchEnd={this.handleEnd}
           onKeyDown={this.handleKeyDown}
-          style={handleStyle}
+          style={fillStyle1}
           tabIndex={0}
         >
           {showTooltip
